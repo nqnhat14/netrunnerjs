@@ -212,4 +212,9 @@ $.extend($.fn.dataTable.defaults, {
         </div>`;
     }
   },
+  drawCallback:function(){
+    setTimeout(()=>{
+      $(window).resize()
+    },100)
+  }
 });
