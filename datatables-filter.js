@@ -97,7 +97,18 @@ $.extend($.fn.dataTable.defaults, {
             </div>
           </div>
         `);
-        $currentElement.closest(".card-body").prepend($filterForm);
+        $currentElement.closest(".card-body").prepend(`
+          <div id="accordion">
+            <div class="card">
+                <div class="card-header" style="background:#f3f3f3" id="search-panel" data-toggle="collapse"
+                    data-target="#searh-panel-content" aria-expanded="true" aria-controls="collapse-search-panel">
+                    <span class="card-title menu-title">ADVANCE SEARCH</span>
+                </div>
+                <div id="searh-panel-content" class="collapse hide" aria-labelledby="search-panel" data-parent="#accordion" style="">
+                ${$filterForm.prop("outerHTML")}
+                </div>
+            </div>
+        </div>`);
 
         if (hasDatePicker) {
           initDateTimePicker();
