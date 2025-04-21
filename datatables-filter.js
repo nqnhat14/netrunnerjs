@@ -100,11 +100,11 @@ $.extend($.fn.dataTable.defaults, {
         $currentElement.closest(".card-body").prepend(`
           <div id="accordion">
             <div class="card">
-                <div class="card-header" style="background:#f3f3f3; padding: 0 20px !important; margin: 20px 0 !important;" id="search-panel" data-toggle="collapse"
+                <div class="card-header" style="background:#f3f3f3" id="search-panel" data-toggle="collapse"
                     data-target="#searh-panel-content" aria-expanded="true" aria-controls="collapse-search-panel">
                     <span class="card-title menu-title">ADVANCE SEARCH</span>
                 </div>
-                <div id="searh-panel-content" class="collapse hide" aria-labelledby="search-panel" data-parent="#accordion" style="">
+                <div id="searh-panel-content" class="collapse hide" aria-labelledby="search-panel" data-parent="#accordion" style="padding: 0 20px !important; margin: 20px 0 !important;">
                 ${$filterForm.prop("outerHTML")}
                 </div>
             </div>
