@@ -100,7 +100,7 @@ $.extend($.fn.dataTable.defaults, {
         $currentElement.closest(".card-body").prepend(`
           <div id="accordion">
             <div class="card">
-                <div class="card-header" style="background:#f3f3f3" id="search-panel" data-toggle="collapse"
+                <div class="card-header" style="background:#f3f3f3;cursor:pointer !important" id="search-panel" data-toggle="collapse"
                     data-target="#searh-panel-content" aria-expanded="true" aria-controls="collapse-search-panel">
                     <span class="card-title menu-title">ADVANCE SEARCH</span>
                 </div>
