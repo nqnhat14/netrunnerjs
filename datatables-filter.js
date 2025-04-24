@@ -158,6 +158,7 @@ $.extend($.fn.dataTable.defaults, {
           const dropdownOptions = createDropdown($(this).data("dropdown"), title, i);
           $filterRow.append(dropdownOptions);
         } else if ($(this).data("checkbox")) {
+          isNumberCheckbox = $(this).data("number")
           $filterRow.append(`
             <div class="form-group col-sm-6">
               <label class="col-form-label">${title}</label>
@@ -166,10 +167,10 @@ $.extend($.fn.dataTable.defaults, {
                   <input type="radio" name="${title}" value="" checked="checked" data-index="${i}"/>All
                 </label>
                 <label>
-                  <input type="radio" name="${title}" value="true" data-index="${i}"/>Yes
+                  <input type="radio" name="${title}" value="${isNumberCheckbox?'1':'true'}" data-index="${i}"/>Yes
                 </label>
                 <label>
-                  <input type="radio" name="${title}" value="false" data-index="${i}"/>No
+                  <input type="radio" name="${title}" value="${isNumberCheckbox?'0':'false'}" data-index="${i}"/>No
                 </label>
               </div>
             </div>
