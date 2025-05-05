@@ -102,7 +102,7 @@ $.extend($.fn.dataTable.defaults, {
             <div class="card">
                 <div class="card-header" style="background:#f3f3f3;cursor:pointer !important" id="search-panel" data-toggle="collapse"
                     data-target="#searh-panel-content" aria-expanded="true" aria-controls="collapse-search-panel">
-                    <span class="card-title menu-title">ADVANCE SEARCH</span>
+                    <span class="card-title menu-title">ADVANCED SEARCH</span>
                 </div>
                 <div id="searh-panel-content" class="collapse hide" aria-labelledby="search-panel" data-parent="#accordion" style="padding: 0 20px !important; margin: 20px 0 !important">
                 ${$filterForm.prop("outerHTML")}
