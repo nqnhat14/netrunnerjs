@@ -60,7 +60,7 @@ $.extend($.fn.dataTable.defaults, {
       // check if input is select2 multiple
       if ($input.hasClass("select2-ajax")) {
         const selectedValues = $input.val();
-        if (selectedValues && selectedValues.length > 0) {
+        if (Array.isArray(selectedValues) && selectedValues.length > 0) {
           searchValue = selectedValues.join("|");
         }
       }
