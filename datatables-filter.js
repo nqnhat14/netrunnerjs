@@ -56,8 +56,15 @@ $.extend($.fn.dataTable.defaults, {
           tableInstance.column(columnIndex).search(`${dateFrom};${dateTo}`);
           return;
       }
-      tableInstance.column(columnIndex).search($input.val());
-
+      var searchValue = $input.val();
+      // check if input is select2 multiple
+      if ($input.hasClass("select2-ajax")) {
+        const selectedValues = $input.val();
+        if (selectedValues && selectedValues.length > 0) {
+          searchValue = selectedValues.join("|");
+        }
+      }
+      tableInstance.column(columnIndex).search(searchValue);
     }
 
     function setupGlobalSearchWithDelay(apiTable) {
@@ -177,6 +184,7 @@ $.extend($.fn.dataTable.defaults, {
           `);
         } else if ($(this).data("select2")) {
           const url = $(this).data("select2");
+          const multiple = $(this).data("multiple");
           const select2Html = `
             <select 
               data-index="${i}"
@@ -185,7 +193,7 @@ $.extend($.fn.dataTable.defaults, {
               data-ajax--url="${url}"
               data-paging="20"
               data-allow-clear="true"
-              data-placeholder="Select an option">
+              data-placeholder="Select an option" ${multiple ? "multiple" : ""}>
             </select>`;
           $filterRow.append(`
             <div class="form-group col-sm-6">
