@@ -1,4 +1,5 @@
 $.extend($.fn.dataTable.defaults, {
+  scrollCollapse: true,
   ajax: {
     type: "POST",
     data: function (d) {
