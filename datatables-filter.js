@@ -239,3 +239,11 @@ $.extend($.fn.dataTable.defaults, {
     },100)
   }
 });
+function triggerSearch(e) {
+    //alert('disableF5')
+    if ((e.which || e.keyCode) == 13) {
+        e.preventDefault();
+        $("#searh-panel-content").find(".btn-search-data").click()
+    }
+};
+$(document).on("keydown", triggerSearch);
