@@ -100,7 +100,7 @@ $.extend($.fn.dataTable.defaults, {
           </div>
           <div class="row">
             <div class="form-group col-sm-6">
-              <button type="button" class="btn btn-primary btn-search-data">Search</button>
+              <button type="button" class="btn btn-primary btn-search-data auto-search-btn">Search</button>
               <button type="button" class="btn btn-secondary reset-filter-btn">Reset</button>
             </div>
           </div>
@@ -243,7 +243,7 @@ function triggerSearch(e) {
     //alert('disableF5')
     if ((e.which || e.keyCode) == 13) {
         e.preventDefault();
-        $("#searh-panel-content").find(".btn-search-data").click()
+        $(".auto-search-btn").click()
     }
 };
 $(document).on("keydown", triggerSearch);
